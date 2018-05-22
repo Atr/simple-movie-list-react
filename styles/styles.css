@@ -1,0 +1,15 @@
+#movie-list-container {
+  border: 1px solid black;
+  width: 400px;
+  height: 500px;
+  padding: 5px;
+  align-content: center
+}
+
+#title-bar {
+	background-color: tan;
+}
+
+#movie-list-entry {
+  border: 1px solid black;
+}
