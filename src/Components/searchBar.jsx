@@ -1,5 +1,20 @@
 //refactor for functional stateless!
 
+var SearchBar = (props) => {
+  console.log(props);
+
+  return (
+  <div>
+    <label>
+      Search for a movie:
+      <input type="text" onChange={props.handleSearchChange} />
+    </label>
+    <input type="submit" onClick={props.handleSearchSubmit} />
+  </div>
+  )
+}
+
+/*
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
@@ -41,5 +56,6 @@ class SearchBar extends React.Component {
     );
   }
 }
+*/
 
 window.SearchBar = SearchBar;
