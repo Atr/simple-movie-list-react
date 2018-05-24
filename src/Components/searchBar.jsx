@@ -16,18 +16,25 @@ class SearchBar extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('A search was submitted: ' + this.state.value);
+    //alert('A search was submitted: ' + this.state.value);
     event.preventDefault();
+    this.props.filterMoviesBySearch(this.state.value);
+
+    //helpful console logs:
+    // console.log(this.props);
+    // console.log(this.state.value);
+    // // //console.log(event.target);
+    //console.log(event.target.name);
   }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} name="ifMultipleInputFieldsPutNameInInputField">
         <label>
           Search for a movie:
           <input type="text" value={this.state.value} onChange={this.handleChange} />
         </label>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Submit" name="test123" />
       </form>
     );
   }
