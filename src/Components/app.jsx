@@ -14,6 +14,9 @@ class App extends React.Component {
       	<div id="title-bar">
         	<h3> MovieList </h3>
         </div>
+        <div id="search-bar">
+          <SearchBar />
+        </div>
         <div id="body-container">
           {this.props.data.map(movie => {
             return <MovieListEntry mov={movie}/>
