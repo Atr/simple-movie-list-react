@@ -5,6 +5,8 @@ class App extends React.Component {
     this.filterMoviesBySearch = this.filterMoviesBySearch.bind(this);
     this.handleSearchChange = this.handleSearchChange.bind(this);
     this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
+    this.handleAddMovieChange = this.handleAddMovieChange.bind(this);
+    this.handleAddMovieSubmit = this.handleAddMovieSubmit.bind(this);
 
     this.state = {
       currentSearch : '',
@@ -27,6 +29,31 @@ class App extends React.Component {
   handleSearchSubmit(e) {
     e.preventDefault();
     this.filterMoviesBySearch(this.state.currentSearch);
+  }
+
+
+  handleAddMovieChange (event) {
+    // console.log('hAMV has run');
+    // console.log(event.target.value);
+    this.setState({
+      movieToAdd: event.target.value
+    });
+    // console.log('current addmov is:');
+    // console.log(this.state.movieToAdd);
+  }
+
+  handleAddMovieSubmit(e) {
+    
+    e.preventDefault();
+    
+    let updatedAllMovies = this.state.allMovies.slice();
+    updatedAllMovies.push({title: this.state.movieToAdd});
+    
+    this.setState({
+      allMovies : updatedAllMovies,
+      moviesToRender: updatedAllMovies,
+      movieToAdd : ''
+    });
   }
 
   filterMoviesBySearch (searchStr) {
@@ -62,7 +89,7 @@ class App extends React.Component {
         	<h3> MovieList </h3>
         </div>
         <div id="search-bar">
-          <AddMovie />
+          <AddMovie handleAddMovieChange={this.handleAddMovieChange} handleAddMovieSubmit={this.handleAddMovieSubmit}/>
         </div>
         <div id="search-bar">
           <SearchBar filterMoviesBySearch={this.filterMoviesBySearch} handleSearchChange={this.handleSearchChange} handleSearchSubmit={this.handleSearchSubmit}/>

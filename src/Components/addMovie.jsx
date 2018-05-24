@@ -1,5 +1,16 @@
 //refactor for functional stateless!
 
+var AddMovie = (props) => (
+  <div>
+    <label>
+      Add a movie:
+      <input type="text" onChange={props.handleAddMovieChange} />
+    </label>
+    <input type="submit" onClick={props.handleAddMovieSubmit} />
+  </div>
+)
+
+/*
 class AddMovie extends React.Component {
 	constructor (props) {
     super (props);
@@ -36,5 +47,6 @@ class AddMovie extends React.Component {
     );
   }
 }
+*/
 
 window.AddMovie = AddMovie;
