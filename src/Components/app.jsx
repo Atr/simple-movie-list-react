@@ -26,7 +26,7 @@ class App extends React.Component {
       } else {
         //this is hacky!
         this.setState ({
-          moviesToRender : [{title: 'Sorry, no movies match that search!'}]
+          moviesToRender : [{title: 'Sorry, no movies match that search.'}]
         });
       }
     } else {
