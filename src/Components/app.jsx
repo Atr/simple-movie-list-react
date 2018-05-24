@@ -43,6 +43,9 @@ class App extends React.Component {
         	<h3> MovieList </h3>
         </div>
         <div id="search-bar">
+          <AddMovie />
+        </div>
+        <div id="search-bar">
           <SearchBar filterMoviesBySearch={this.filterMoviesBySearch} />
         </div>
         <div id="body-container">
@@ -51,7 +54,7 @@ class App extends React.Component {
           })}
         </div>
       </div>
-    )
+    );
   }
 };
 

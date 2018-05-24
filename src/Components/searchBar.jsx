@@ -1,3 +1,5 @@
+//refactor for functional stateless!
+
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
